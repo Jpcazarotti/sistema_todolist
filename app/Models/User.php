@@ -12,6 +12,9 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
+    /** Linha à baixo serve para referenciar esse model com a tabela(se caso o nome da tabela não for bater corretamente com a automatização do Laravel) */
+    protected $table = "usuarios"; 
+
     /**
      * The attributes that are mass assignable.
      *

@@ -6,7 +6,18 @@ use Illuminate\Http\Request;
 
 class SiteController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('home');
+    }
+
+    public function planos()
+    {
+        return view('planos');
+    }
+
+    public function sobreNos()
+    {
+        return view('sobre-nos');
     }
 }

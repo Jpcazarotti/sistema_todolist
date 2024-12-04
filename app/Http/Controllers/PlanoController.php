@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Plano;
 use Illuminate\Http\Request;
 
 class PlanoController extends Controller
 {
     public function index(){
-        return view('admin.planos.index');
+        $planos = Plano::all();
+        return view('admin.planos.index', compact('planos'));
     }
 
     public function cadastrar(){

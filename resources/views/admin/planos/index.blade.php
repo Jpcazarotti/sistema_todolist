@@ -31,10 +31,12 @@
                 <tbody>
                     <!-- Linha do Registro -->
 
+                     @foreach ($planos as $plano)
+
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Gratuito</td>
-                        <td>R$ 0,00</td>
+                        <th scope="row">{{ $plano->id }}</th>
+                        <td>{{ $plano->titulo }}</td>
+                        <td>R$ {{ $plano->valor }}</td>
                         <td class="text-center">
                             <a class="btn btn-sm btn-light" href="visualizar.html">
                                 <i class="fas fa-eye"></i>
@@ -46,6 +48,8 @@
                                 <i class="fas fa-trash-alt"></i></a>
                         </td>
                     </tr>
+
+                    @endforeach
 
                     <!-- Final Linha do Registro -->
                 </tbody>

@@ -15,18 +15,16 @@
             <table class="table table-striped mt-3">
                 <tr>
                     <th width="180">Título</th>
-                    <td>Gratuito</td>
+                    <td>{{ $plano->titulo }}</td>
                 </tr>
                 <tr>
                     <th width="100">Valor</th>
-                    <td>R$ 0,00</td>
+                    <td>R$ {{ $plano->valor }}</td>
                 </tr>
                 <tr>
                     <th width="100">Descrição</th>
                     <td>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. A, esse mollitia? Eos expedita quae
-                        dolore nesciunt alias corporis esse mollitia, illo maxime vero consectetur debitis numquam
-                        neque cupiditate ratione dignissimos.
+                        {!! $plano->descricao !!}
                     </td>
                 </tr>
             </table>

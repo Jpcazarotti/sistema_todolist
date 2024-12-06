@@ -42,9 +42,28 @@ class PlanoController extends Controller
         return view('admin.planos.visualizar', compact('plano'));
     }
 
-    public function editar()
+    public function editar($id)
     {
-        return view('admin.planos.editar');
+        $plano = Plano::findOrFail($id);
+        return view('admin.planos.editar', compact('plano'));
+    }
+
+    public function update(Request $request, $id) 
+    {
+        $request->validate([
+            'titulo' => 'required|string|max:100',
+            'descricao' => 'required',
+            'valor' => 'required|numeric'
+        ]);
+
+        $plano = Plano::findOrFail($id);
+        $plano->titulo = $request->titulo;
+        $plano->descricao = $request->descricao;
+        $plano->valor = $request->valor;   
+        /* Sobre as 3 linhas à cima o lado esquerdo é referente ao Banco de Dados, já o lado direito está relacionado com o formulário(cadastrar.blade.php | O que está escrito no "name" do form)*/        
+        $plano->save();
+
+        return redirect()->route('planos.index')->with('mensagem', 'Cadastro atualizado com sucesso!');
     }
 
     public function excluir()

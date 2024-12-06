@@ -41,7 +41,7 @@
                             <a class="btn btn-sm btn-light" href="{{ route('planos.visualizar', ['id' => $plano->id]) }}">
                                 <i class="fas fa-eye"></i>
                             </a>
-                            <a class="btn btn-sm btn-primary" href="editar.html">
+                            <a class="btn btn-sm btn-primary" href="{{ route('planos.editar', ['id' => $plano->id]) }}">
                                 <i class="fas fa-edit"></i>
                             </a>
                             <a class="btn btn-sm btn-danger" href="index.html">
